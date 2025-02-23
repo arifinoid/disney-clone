@@ -9,7 +9,7 @@ export default async function MovieDetail({
   const movie = await getMovieDetails(id);
 
   return (
-    <div className="p-4 text-white">
+    <div className="p-4">
       <h1 className="text-3xl font-bold">{movie.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}

@@ -18,9 +18,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-4 text-white">
+    <div className="p-4 overflow-x-scroll whitespace-nowrap">
       <h1 className="text-2xl font-bold mb-4">Top Rated Movies</h1>
-      <div className="flex space-x-4 overflow-x-auto">
+      <div className="movies-wrapper">
         {movies?.map((movie) => (
           <MovieCard
             key={movie.id}
@@ -34,7 +34,7 @@ export default function Home() {
       </div>
 
       <h1 className="text-2xl font-bold mt-8 mb-4">Top Rated TV Shows</h1>
-      <div className="flex space-x-4 overflow-x-auto">
+      <div className="movies-wrapper">
         {tvShows?.map((tv) => (
           <MovieCard
             key={tv.id}

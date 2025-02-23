@@ -9,7 +9,7 @@ export default async function TVDetail({
   const tv = await getTVDetails(id);
 
   return (
-    <div className="p-4 text-white">
+    <div className="p-4">
       <h1 className="text-3xl font-bold">{tv.name}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w780${tv.backdrop_path}`}
