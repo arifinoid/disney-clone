@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "gen-types": "npx openapi-typescript https://developer.themoviedb.org/openapi/64542913e1f86100738e227f -o gen/schema.d.ts",
+    "serve": "next dev --turbopack",
+    "dev": "concurrently \"npm run serve\" \"npm run gen-types\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -25,11 +27,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "jest": "^29.7.0",
+    "openapi-typescript": "^7.6.1",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   }
 }
